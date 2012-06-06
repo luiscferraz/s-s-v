@@ -1,0 +1,12 @@
+Sistema organizado :
+
+	- View (responsavel pela interface gráfica(Designer ))
+	- Controller (respondesavel pelo controle do sistema ,tais como funções(Programador))
+	- Model (responsavel pela conexão ao banco de dados e seus CRUDS (Programador))
+
+
+** Controler **
+	Classes:
+		Estrutura
+		Usuários
+		

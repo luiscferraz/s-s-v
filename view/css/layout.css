@@ -1,0 +1,229 @@
+/**
+ * Author Erick Haendel
+ */
+ 
+ /*estilo geral */
+ 
+ * {
+  font-family: Verdana,Arial;  
+  margin: 0px;
+  padding:0px;
+ }
+ 
+ body {
+    background-image: url(../images/bg.jpg);
+ }
+ 
+ 
+ 
+ /*estilo da pagina login adm*/
+ 
+#form-login {
+    background-color: #A9DDF5;
+    border:1px solid #CCC;
+    border-radius:10px;
+    moz-border-radius:10px;
+    webkit-border-radius:10px;
+    box-shadow:2px 2px 5px #999;
+    padding-top:5px;
+    height:215px;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-top:-100px;
+    margin-left:-180px;
+    width: 335px;
+    
+ }
+    #form-login label{
+        margin:20px 10px;
+    }
+    #form-login input[type='text'],#form-login input[type='password'] {
+        padding:5px;
+        margin:5px 10px;
+        width: 300px;
+        line-height: 40px;
+        border-radius:10px;
+        moz-border-radius:10px;
+        webkit-border-radius:10px;
+        border:1px solid #ccc;
+        
+        
+    }
+    
+    #form-login input[type='submit'] {
+        padding:5px;
+        margin:5px 10px;
+        width: 150px;
+        line-height: 40px;
+        border-radius:10px;
+        moz-border-radius:10px;
+        webkit-border-radius:10px;
+        border:1px solid #ccc;
+        margin-left:170px;
+        cursor:pointer
+        
+    }
+    
+    
+
+/*Estilo da pagina ADM*/
+
+div {}
+
+#corpo {
+    width: 900px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left:-450px;
+    background-color: #FFF;
+    box-shadow: 2px 2px 20px #555;
+    -webkit-box-shadow: 2px 2px 20px #555;
+    -moz-box-shadow: 2px 2px 20px #555;
+}
+    #corpo #topo {
+        height: 100px;
+        border-bottom:3px solid #ccc;
+        
+    }
+    
+    #corpo #topo img {
+        width: 200px;
+        padding:10px 50px;
+    }
+    
+    #corpo #topo #configuracoes img {
+        width: 30px;
+        position: absolute;
+        right: 0px;
+    }
+    
+    #corpo #topo #configuracoes:hover {
+        opacity:0.5;
+    }
+    
+    #corpo #centro {
+       
+    }
+    
+    #corpo #centro #menu {
+        height: 100%;
+        sfloat:left;
+        
+    }
+    
+    #corpo #centro #menu ul li {
+        list-style: none;
+        margin:10px;
+        float:left;
+        
+    }
+    
+
+    
+    #corpo #centro #menu ul li ul {
+        width: 200px;
+        font-size: 12px;
+        position:absolute;
+        margin-top:5px;
+        margin-left:40px;
+        border:1px solid #ccc;
+        border-top:none;
+        box-shadow:0px 2px 5px #999;
+        overflow:hidden;
+        z-index: 1;
+        background-color: #FFF;
+        
+    }
+    
+    #corpo #centro #menu ul li ul li {
+        margin:0px;
+        padding:5px;
+        width: 190px;
+        
+    }
+    #corpo #centro #menu ul li ul li:hover {
+        background-color: #57A4E8;
+    }
+    
+    #corpo #centro #menu ul li a {
+        text-decoration: none;
+        color:#000;
+        margin:10px;
+    }
+    
+    #corpo #centro #menu ul li a:hover {
+        text-decoration: underline;
+    }
+    
+     #corpo #centro #menu ul li img {
+        width: 20px;
+        margin-right: 10px;
+        vertical-align: bottom;
+     }
+    
+    #corpo #centro #conteudo {
+        width: 100%;
+        clear: both;
+        margin-top: 20px;
+        padding:10px;
+    }
+    
+    
+    
+    /*Estilo funcionario*/
+ 
+ 
+.title {
+    margin:10px;
+    font-weight: 100;
+    
+}    
+#form-cadastro-funcionario {
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    padding: 30px 20px;
+        width:850px;
+}
+
+    #form-cadastro-funcionario label {
+        display: block;
+        font-size: 12px;
+        margin-top:10px;
+    }
+    
+    #form-cadastro-funcionario input {
+        margin-top: 5px;
+        line-height: 20px;
+        width: 300px;
+    }
+    
+#form-buscar-funcionario {
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+    margin:0px;
+    width:850px;
+    line-height: 30px;
+}
+#tabela-funcionario {
+    width: 850px;
+    margin-top: 20px;
+    border:1px solid #ccc;
+}
+    #tabela-funcionario tr {
+        font-size: 12px;
+        font-weight: 100;
+        border:1px solid #ccc;
+    }
+    
+    #tabela-funcionario td {
+        font-size: 12px;
+        font-weight: 100;
+        border:1px solid #ccc;
+        padding:0px 10px;
+    }
+    
+    #tabela-funcionario td img {
+        height: 20px;
+    }
