@@ -1,12 +1,12 @@
 <?php
 
 /**
- * @author Erick Haendel
+ * @author Rafael (Faet.Erick Haendel)
  * @copyright 2012
  */
 
 //Exporta classes banco
-include '../model/funcionario.php';
+include '../model/cliente.php';
 
 
 
@@ -54,7 +54,7 @@ class cliente {
                                     <input type="text" name="cpf" value=""/>
                                     <input type="button" value="Buscar"/>
                                 </form>
-                                '.$this -> ListaCLientes().'
+                                '.$this -> ListaClientes().'
                                 
                                 
                                 ';
@@ -86,7 +86,7 @@ class cliente {
          * 
          * */
          
-         $tabela = '<table id="tabela-funcionario">
+         $tabela = '<table id="tabela-cliente">
                         <tr>
                         	<th>CPF</th>
                         	<th>Nome</th>
