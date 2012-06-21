@@ -38,6 +38,11 @@ class bdfuncionario{
 			$result = mysql_query('SELECT * FROM funcionario WHERE cpf='.$id.'');
 			return mysql_fetch_array($result);
 		}
+        
+  public function GetFuncionarioIdUnico($id){
+			$result = mysql_query('SELECT * FROM funcionario WHERE cpf='.$id.'');
+			return mysql_fetch_array($result);
+		}
 
 		
 	public function UpdateFuncionario($id,$senha,$login, $Nome,$DataAni, $Instrumento, $Telefone, $Celular, $Email,$Foto,$Facebook,$Twitter, $Orkut, $MeusSites, $Categoria) {
