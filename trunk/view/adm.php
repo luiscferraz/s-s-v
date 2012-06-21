@@ -19,6 +19,16 @@ include_once 'importacao.php';
         <link href="css/layout.css" rel="stylesheet" type="text/css" />
         <script src="js/jquery-1.7.1.min.js"></script>
         <script src="js/adm.js"></script>
+        <script type="text/javascript" src="js/jscripts/tiny_mce/tiny_mce.js"></script>
+        <!-- TinyMCE -->
+        <script type="text/javascript">
+        	tinyMCE.init({
+        		mode : "textareas",
+        		theme : "simple"
+        	});
+            
+        </script>
+        <!-- /TinyMCE -->
     
     	<title>Adm</title>
     </head>

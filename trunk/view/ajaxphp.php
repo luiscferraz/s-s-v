@@ -17,6 +17,18 @@ if ($identificador == 'cad-fun'){
 elseif($identificador == 'fun'){
     echo $funcionario ->GetFuncionarios();
 }
+elseif ($identificador == 'cad-cli'){
+    echo $cliente -> GetCadastroFuncionario();
+}
+elseif($identificador == 'cli'){
+    echo $cliente -> GetFuncionarios();
+}
 
+elseif ($identificador == 'cad-not'){
+    echo $noticia -> GetCadastroNoticia();
+}
+elseif($identificador == 'not'){
+    echo $noticia -> GetNoticias();
+}
 
 ?>

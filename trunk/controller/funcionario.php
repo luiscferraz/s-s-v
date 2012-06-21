@@ -67,6 +67,44 @@ class funcionario {
         
     }
     
+    public function GetEditarFuncionario($id){
+        $result = $this -> __bdfuncionario -> GetFuncionarioIdUnico($id);
+        $cpf = $result[1];
+        $nome = $result[2];
+        $data = $result[3];
+        $sexo = $result[4];
+        $rg = $result[5];
+        $celular = $result[6];
+        $telefone = $result[7];
+        $senha = $result[9];
+        $editar ='
+                                <h2 class="title">Editar Funcionario</h2>
+                                <form id="form-edit" class="'.$id.'">                                    
+                                    <form id="form-cadastro-funcionario">
+                                    <label>Nome Completo :</label>
+                                    <input type="text" value="'.$nome.'" name="nome"/>
+                                    <label>Data de Nascimento</label>
+                                    <input type="text" value="'.$data.'" name="data"/>
+                                    <label>Sexo</label>
+                                    <select name="sexo">
+                                        <option value="masculino">M</option>
+                                        <option value="feminino">F</option>
+                                    </select>
+                                    <label>CPF:</label>
+                                    <input type="text" name="cpf" value="'.$cpf.'"/>
+                                    <label>RG:</label>
+                                    <input type="text" name="rg" value="'.$rg.'"/>
+                                    <label>Telefone:</label>
+                                    <input type="text" value="'.$telefone.'" name="telefone"/>
+                                    <label>Celular:</label>
+                                    <input type="text" value="'.$celular.'" name="celular"/>
+                                    <input type="button" value="Salvar"/>
+                                </form>
+                                
+                                ';
+        return $editar;
+    }
+    
     public function  GetFuncionarios(){
         /**
          * Retorna Conteudo do edicao funcionario
@@ -82,7 +120,7 @@ class funcionario {
          * 
          * */
          
-         $tabela = '<table id="tabela-funcionario">
+         $tabela = '<table id="tabela" class="funcionario">
                         <tr>
                         	<th>CPF</th>
                         	<th>Nome</th>
@@ -96,9 +134,9 @@ class funcionario {
                             <tr>
                             	<td>'.$fun['cpf'].'</td>
                             	<td>'.htmlentities($fun['nome']).'</td>
-                            	<td><center><a href=""><img src="images/edit.png" alt="" /></a></center></td>
-                            	<td><center><a href=""><img src="images/excluir.png" alt="" /></a></center></td>
-                            </tr>';
+                            	<td><center><a href="#"  class="editar" id="'.$fun[0].'"><img src="images/edit.png" alt="" /></a></center></td>
+                                    <td><center><a href="#" class="excluir" id="'.$fun[0].'"><img src="images/excluir.png" alt="" /></a></center></td>
+                                </tr>';
                             
                         }
                         

@@ -43,6 +43,10 @@ class bdfuncionario{
 	public function UpdateFuncionario($id,$senha,$login, $Nome,$DataAni, $Instrumento, $Telefone, $Celular, $Email,$Foto,$Facebook,$Twitter, $Orkut, $MeusSites, $Categoria) {
 			$result = mysql_query('UPDATE membro SET senha='.$senha.',login="'.$login.'",Nome="'.$Nome.'",DataAni='.$DataAni.',Instrumento='.$Instrumento.',Telefone='.$Telefone.',Celular='.$Celular.',Email="'.$Email.'",Foto="'.$Foto.'",Facebook="'.$Foto.'",Twitter="'.$Twitter.'",Orkut="'.$Orkut.'",MeusSites="'.$MeusSites.'",Categoria="'.$Categoria.'" WHERE id='.$id.'');
 	}
+    
+     public function DeleteFuncionario($id){
+			$result = mysql_query('Delete FROM funcionario WHERE cpf='.$id);
+	}
 	
 
 	

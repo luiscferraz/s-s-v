@@ -17,8 +17,19 @@ class menu {
                                         <li><a href="#" id="fun"> Funcionários </a></li>
                                     </ul>
                                 </li>
-                                <li><a href="#"><img src="images/cliente.png" alt="Info Cliente" title="Clientes" />Clientes</a></li>
-                                <li><a href="#"><img src="images/not.png" alt="Info Notícia" title="Notícias" />Notícias</a></li>
+                                <li><a href="#"><img src="images/cliente.png" alt="Info Cliente" title="Clientes" />Clientes</a>
+                                     <ul class="submenu">
+                                        <li> <a href="#" id="cad-cli">Cadastrar Cliente</a> </li>
+                                        <li><a href="#" id="cli"> Clientes </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><img src="images/not.png" alt="Info Notícia" title="Notícias" />Notícias</a>
+                                    <ul class="submenu">
+                                        <li> <a href="#" id="cad-not">Cadastrar Notícias</a> </li>
+                                        <li><a href="#" id="not"> Notícias </a></li>
+                                    </ul>
+                                </li>
+                                </li>
                             </ul>';
     }
     
