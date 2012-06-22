@@ -157,7 +157,9 @@ class funcionario {
         if($funcionario = $this -> __bdfuncionario -> GetFuncionarioCpf($login) ){
                     if ($funcionario['senha'] == $senha) {
                         session_start();
-                        $_SESSION['login'] =  $login;
+                        $_SESSION['nome'] =  $funcionario['nome'];
+                        $_SESSION['cpf'] = $funcionario['cpf'];
+                        $_SESSION['nivel'] = $funcionario['nivel'];
                         $_SESSION['pass'] = true;
                         header('Location: ../view/adm.php');
                     }

@@ -31,7 +31,7 @@ elseif($identificador == 'not'){
     echo $noticia -> GetNoticias();
 }
 elseif ($identificador == 'min-ven'){
-    echo $noticia -> GetNoticias();
+    echo $cliente -> MinhasVendas()
 }
 
 ?>
