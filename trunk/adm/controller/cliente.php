@@ -24,7 +24,7 @@ class cliente {
                                         <legend>Dados Pessoais</legend>
                                         <label>Nome Completo :</label>
                                         <input type="text" value="" name="nome"/>
-                                        <label>CPFo :</label>
+                                        <label>CPF :</label>
                                         <input type="text" value="" name="cpf"/>
                                         <label>RG :</label>
                                         <input type="text" value="" name="rg"/>
@@ -54,7 +54,7 @@ class cliente {
                                         <label>Foto Veículo:</label>
                                         <input type="file" value="" name="foto"/>
                                     </fieldset>
-                                        <input type="button" value="Cadastrar"/>
+                                        <input type="button" id="bt-cad-cli" value="Cadastrar"/>
                                 </form>
                                 ';
                                 

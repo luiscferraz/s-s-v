@@ -260,45 +260,26 @@ $(document).ready(function()
     
     // Cadastro Depoimentos
     
-    $('#bt-cad-depo').live('click',function(){
+    $('#bt-cad-cli').live('click',function(){
         
-        var nome = $('input[name=nome]').val();
-        var cidade = $('input[name=cidade]').val();
-        var estado = $('#estado').val();
-        var curso = $('input[name=curso]').val();
-        tinyMCE.triggerSave();
-        var mensagem = $('#caixa-depo').val();
-        if (nome == '' || conteudo == ''){
-            if (nome == ''){
-                $('input[name=nome]').css('border','1px solid red');
-                $('input[name=nome]').attr('placeholder','Campo obrigatorio');
-                $('input[name=nome]').css('background','#FF8F8F');
-                }
-            if (conteudo == ''){
-                $('.mceLayout').css('border','1px solid red');;
-                $('.mceLayout').css('background','#FF8F8F');
-                $('textarea').attr('placeholder','Campo obrigatorio');
-                }
-        }
-        else {        
-            $.ajax({
-    			type: "POST",
-    			url: "ajaxcadastro.php",
-    			//data: "cadastro=depo&nome="+nome+"&cidade="+cidade+"&estado="+estado+"&curso="+curso+"&mensagem="+mensagem,
-                data: {cadastro: "depo", nome:nome, cidade:cidade, estado:estado,curso:curso,mensagem:mensagem},
-    			success: function(conteudo){
-    			     if (conteudo == 'true'){
                         $('input[name=nome]').val('');
+                        $('input[name=cpf]').val('');
+                        $('input[name=rg]').val('');
+                        $('input[name=rua]').val('');
+                        $('input[name=rua]').val('');
+                        $('input[name=bairro]').val('');
                         $('input[name=cidade]').val('');
-                        $('input[name=estado]').val('');
-                        $('input[name=curso]').val('');
-                        $('#caixa-depo').val('');
+                        $('input[name=uf]').val('');
+                        $('input[name=cep]').val('');
+                        $('input[name=veiculo]').val('');
+                        $('input[name=placa]').val('');
+                        $('input[name=modelo]').val('');
+                        $('input[name=fabricacao]').val('');
+                        $('input[name=valorveiculo]').val('');
                         $('.aviso').remove();
                         $('form').prepend('<h2 class="aviso positivo" >Cadastro Efetuado</h2>');
-    			     }
-			}
-  	     })
-        }
+    			     
+
     });
     //fim depoimentos
     
