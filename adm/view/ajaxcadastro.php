@@ -19,7 +19,7 @@ $opc =  $_POST['cadastro'];
 if ($opc == 'cad') {
     $flag = $fun -> GetFuncionarioIdUnico( $_POST['cpf']);
     if ($flag == '') {
-        $fun -> SetFuncionario($_POST['cpf'],$_POST['nome'],$_POST['data'],$_POST['sexo'],$_POST['rg'],$_POST['celular'],$_POST['telefone'],1,$_POST['senha']);
+        $fun -> SetFuncionario($_POST['cpf'],$_POST['nome'],$_POST['data'],$_POST['sexo'],$_POST['rg'],$_POST['celular'],$_POST['telefone'],2,$_POST['senha']);
         echo 'true';
     }
     else {
