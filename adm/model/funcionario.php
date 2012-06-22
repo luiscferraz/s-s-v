@@ -22,48 +22,40 @@ class bdfuncionario{
 		
 	}
 	
-	public function SetUser($login,$senha) {
+	public function SetFuncionario($cpf,$nome,$datanascimento,$sexo,$rg,$celular,$telefone,$nivel,$senha) {
 		// Campos obrigatorios(login,nome e senha) para poder cadastrar no banco
-			mysql_query('INSERT INTO  user (login,senha) VALUES ("'.$login.'","'.$senha.'")', $this -> __conn) or die(mysql_error());
+			mysql_query('INSERT INTO  funcionario (cpf,nome,datanascimento,sexo,rg,celular,telefone,nivel,senha) VALUES ('.$cpf.',"'.$nome.'","'. $datanascimento.'","'. $sexo.'","'. $rg.'",'. $celular.','. $telefone.',"'. $nivel.'", "'.$senha.'")', $this -> __conn) or die(mysql_error());
 			return true;
 	}
 	
 	public function GetFuncionario(){
-			$result =  mysql_query('SELECT * FROM user') or die(mysql_error());
+			$result =  mysql_query('SELECT * FROM funcionario') or die(mysql_error());
 			return $result;
 		
 		}
-	
-    public function GetFuncionarioLoginUnico($id){
-			$result = mysql_query('SELECT * FROM user WHERE login= "'.$id.'"');
-			return mysql_fetch_array($result);
-		}	
-        
-	public function GetFuncionarioLogin($id){
-			$result = mysql_query('SELECT * FROM user WHERE login LIKE "%'.$id.'%"');
-			return $result;
-		}
-        
-  
-    public function GetFuncionarioId($id){
-			$result = mysql_query('SELECT * FROM user WHERE id LIKE "%'.$id.'%"');
-			return $result;
-		}
-        
-   public function GetFuncionarioIdUnico($id){
-			$result = mysql_query('SELECT * FROM user WHERE id = '.$id.'');
+		
+	public function GetFuncionarioCpf($id){
+			$result = mysql_query('SELECT * FROM funcionario WHERE cpf='.$id.'');
 			return mysql_fetch_array($result);
 		}
+        
+  public function GetFuncionarioIdUnico($id){
+			$result = mysql_query('SELECT * FROM funcionario WHERE cpf='.$id.'');
+			return mysql_fetch_array($result);
+		}
+        
 
 		
-	public function UpdateUser($user,$senha,$id){
-			$result = mysql_query('UPDATE user SET login="'.$user.'",senha='.$senha.' WHERE id='.$id);
+	public function UpdateFuncionario($id,$senha,$login, $Nome,$DataAni, $Instrumento, $Telefone, $Celular, $Email,$Foto,$Facebook,$Twitter, $Orkut, $MeusSites, $Categoria) {
+			$result = mysql_query('UPDATE membro SET senha='.$senha.',login="'.$login.'",Nome="'.$Nome.'",DataAni='.$DataAni.',Instrumento='.$Instrumento.',Telefone='.$Telefone.',Celular='.$Celular.',Email="'.$Email.'",Foto="'.$Foto.'",Facebook="'.$Foto.'",Twitter="'.$Twitter.'",Orkut="'.$Orkut.'",MeusSites="'.$MeusSites.'",Categoria="'.$Categoria.'" WHERE id='.$id.'');
+	}
+    
+     public function DeleteFuncionario($id){
+			$result = mysql_query('Delete FROM funcionario WHERE cpf='.$id);
 	}
 	
 
-	public function DeleteFuncionario($id){
-			$result = mysql_query('Delete FROM user WHERE id='.$id);
-	}
+	
 	
 	public function validacao($login='',$senha='') {
 

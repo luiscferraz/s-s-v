@@ -6,9 +6,7 @@
 
 
 include_once('../controller/funcionario.php');
-include_once('../controller/depoimentos.php');
 include_once('../controller/noticias.php');
-$depo = new depoimento;
 $fun = new funcionario;
 $not = new noticia;
 

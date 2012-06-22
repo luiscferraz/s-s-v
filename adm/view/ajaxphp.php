@@ -17,12 +17,11 @@ if ($identificador == 'cad-fun'){
 elseif($identificador == 'fun'){
     echo $funcionario ->GetFuncionarios();
 }
-
-elseif ($identificador == 'cad-depo'){
-    echo $depoimento -> GetCadastroDepoimento();
+elseif ($identificador == 'cad-cli'){
+    echo $cliente -> GetCadastroFuncionario();
 }
-elseif($identificador == 'depo'){
-    echo $depoimento -> GetDepoimentos();
+elseif($identificador == 'cli'){
+    echo $cliente -> GetFuncionarios();
 }
 
 elseif ($identificador == 'cad-not'){
@@ -31,6 +30,8 @@ elseif ($identificador == 'cad-not'){
 elseif($identificador == 'not'){
     echo $noticia -> GetNoticias();
 }
-
+elseif ($identificador == 'min-ven'){
+    echo $noticia -> GetNoticias();
+}
 
 ?>

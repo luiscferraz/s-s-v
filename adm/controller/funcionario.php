@@ -15,33 +15,41 @@ class funcionario {
     private $cadastro ='';
     private $buscar ='';
     
-    /**
-     * funcionario::__construct()
-     * 
-     * @return
-     */
     function __construct(){
         $this -> __bdfuncionario = new bdfuncionario;
         $this -> __cadastro ='
                                 <h2 class="title">Cadastrar Funcionario</h2>
                                 <form id="form-cadastro-funcionario">
-                                    <label>Login:</label>
+                                    <label>Nome Completo :</label>
                                     <input type="text" value="" name="nome"/>
-                                    <label>Senha</label>
-                                    <input type="text" value="" name="senha"/>
-                                    <input type="button" value="Cadastrar" id="bt-cad-fun" />
+                                    <label>Data de Nascimento</label>
+                                    <input type="text" value="" name="data"/>
+                                    <label>Sexo</label>
+                                    <select id="sexo" name="sexo">
+                                        <option value="masculino">M</option>
+                                        <option value="feminino">F</option>
+                                    </select>
+                                    <label>CPF:</label>
+                                    <input type="text" name="cpf" value=""/>
+                                    <label>RG:</label>
+                                    <input type="text" name="rg" value=""/>
+                                    <label>Telefone:</label>
+                                    <input type="text" value="" name="telefone"/>
+                                    <label>Celular:</label>
+                                    <input type="text" value="" name="celular"/>
+                                    <label>Senha : </label>
+                                    <input type="text" value="" name="senha" />
+                                    <input type="button" id="bt-cad-fun" value="Cadastrar"/>
                                 </form>
                                 ';
-        
                                 
         $this -> __buscar ='
-                            
                                 <h2 class="title">Buscar Funcionario</h2>
-                                <form id="form-buscar" class="fun">
+                                <form id="form-buscar-funcionario">
                                     <label>Nome :</label>
-                                    <input type="text" value="" name="nome-pesq" id="nome"/> ou
-                                    <label>Id:</label>
-                                    <input type="text" name="id" id="id" value=""/>
+                                    <input type="text" value="" name="nome"/>
+                                    <label>CPF:</label>
+                                    <input type="text" name="cpf" value=""/>
                                     <input type="button" value="Buscar"/>
                                 </form>
                                 '.$this -> ListaFuncionarios().'
@@ -52,60 +60,72 @@ class funcionario {
         
     }
     
-    /**
-     * funcionario::GetCadastroFuncionario()
-     * 
-     * @return formulario de cadastro
-     */
     public function  GetCadastroFuncionario(){
-
+        /**
+         * Retorna Conteudo do cadastro funcionario
+         * 
+         */
         return $this -> __cadastro; 
         
     }
     
-    /**
-     * funcionario::GetFuncionarios()
-     * 
-     * @return formulario de busca com lista de funcionarios
-     */
-    public function  GetFuncionarios(){
-
-        return $this -> __buscar; 
-        
-    }
-    
-    /**
-     * funcionario::GetEditarFuncionario()
-     * 
-     * @return formulario de edicao
-     */
     public function GetEditarFuncionario($id){
         $result = $this -> __bdfuncionario -> GetFuncionarioIdUnico($id);
-        $login = $result[1];
-        $senha = $result[2];
+        $cpf = $result[0];
+        $nome = $result[1];
+        $data = $result[2];
+        $sexo = $result[3];
+        $rg = $result[4];
+        $celular = $result[5];
+        $telefone = $result[6];
+        $senha = $result[8];
         $editar ='
+        
                                 <h2 class="title">Editar Funcionario</h2>
-                                <form id="form-edit" class="'.$id.'">
-                                    <label>Login:</label>
-                                    <input type="text" value="'.$login.'" name="nome"/>
-                                    <label>Senha</label>
-                                    <input type="text" value="'.$senha.'" name="senha"/>
-                                    <input type="button" value="Salvar" id="bt-edt-fun" />
+                                <form id="form-edit" class="'.$id.'">                                    
+                                    <form id="form-cadastro-funcionario">
+                                    <label>Nome Completo :</label>
+                                    <input type="text" value="'.$nome.'" name="nome"/>
+                                    <label>Data de Nascimento</label>
+                                    <input type="text" value="'.$data.'" name="data"/>
+                                    <label>Sexo</label>
+                                    <select name="sexo">
+                                        <option value="masculino">M</option>
+                                        <option value="feminino">F</option>
+                                    </select>
+                                    <label>CPF:</label>
+                                    <input type="text" name="cpf" value="'.$cpf.'"/>
+                                    <label>RG:</label>
+                                    <input type="text" name="rg" value="'.$rg.'"/>
+                                    <label>Telefone:</label>
+                                    <input type="text" value="'.$telefone.'" name="telefone"/>
+                                    <label>Celular:</label>
+                                    <input type="text" value="'.$celular.'" name="celular"/>
+                                    <input type="button" value="Salvar"/>
                                 </form>
+                                
                                 ';
         return $editar;
     }
     
-    /**
-     * funcionario::ListaFuncionarios()
-     * 
-     * @return
-     */
+    public function  GetFuncionarios(){
+        /**
+         * Retorna Conteudo do edicao funcionario
+         * 
+         */
+        return $this -> __buscar; 
+        
+    }
+    
     private function ListaFuncionarios(){
+        /**
+         * Tabela com a lista de funcionarios com opcao de excluir e editar
+         * 
+         * */
          
          $tabela = '<table id="tabela" class="funcionario">
                         <tr>
-                        	<th>ID</th>
+                        	<th>CPF</th>
                         	<th>Nome</th>
                             <th>Editar</th>
                             <th>Excluir</th>
@@ -115,11 +135,11 @@ class funcionario {
                         while ($fun = mysql_fetch_array($a)){ 
                             $tabela = $tabela . '
                             <tr>
-                            	<td>'.$fun['id'].'</td>
-                            	<td>'.$fun['login'].'</td>
+                            	<td>'.$fun['cpf'].'</td>
+                            	<td>'.htmlentities($fun['nome']).'</td>
                             	<td><center><a href="#"  class="editar" id="'.$fun[0].'"><img src="images/edit.png" alt="" /></a></center></td>
-                        	   <td><center><a href="#" class="excluir" id="'.$fun[0].'"><img src="images/excluir.png" alt="" /></a></center></td>
-                            </tr>';
+                                    <td><center><a href="#" class="excluir" id="'.$fun[0].'"><img src="images/excluir.png" alt="" /></a></center></td>
+                                </tr>';
                             
                         }
                         
@@ -132,38 +152,21 @@ class funcionario {
         
     }
     
-    /**
-     * funcionario::ValidarLogin()
-     * 
-     * @param mixed $login
-     * @param mixed $senha
-     * @return
-     */
     public function ValidarLogin($login,$senha){
-        $local = $_SERVER['HTTP_HOST'];
-            
-            if ($local == 'localhost'){
-                $local = 'http://'.$local.'/acadetecinst/adm';
-                }
-            else {
-                $local = 'http://'.$local.'/teste/adm';
-            }
 
-        
-        if($funcionario = $this -> __bdfuncionario -> GetFuncionarioLoginUnico($login) ){
+        if($funcionario = $this -> __bdfuncionario -> GetFuncionarioCpf($login) ){
                     if ($funcionario['senha'] == $senha) {
                         session_start();
                         $_SESSION['login'] =  $login;
-                        $_SESSION['flag'] = true;
-                        header('Location:   '.$local.'/view/adm.php');
+                        $_SESSION['pass'] = true;
+                        header('Location: ../view/adm.php');
                     }
                     else{
-                        header('Location: '.$local.'/view/home.php');
-                        
+                        header('Location: ../view/home.htm');
                     }            
         }
         else{
-            header('Location: '.$local.'/view/home.php');
+            header('Location: ../view/home.htm');
         }
 
         

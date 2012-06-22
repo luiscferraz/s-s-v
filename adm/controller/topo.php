@@ -10,7 +10,7 @@ class topo {
     private $topo ='';
     
     function __construct(){
-        $this -> __topo ='<img src="images/tjn.png" alt="Acadetec" title="Acadetec" /> 
+        $this -> __topo ='<img src="images/tjn.jpg" alt="TJN" title="TJN" /> 
                             <ul id="configuracoes"><li ><img src="images/config.png" alt="" />
                                                     <ul>
                                                         

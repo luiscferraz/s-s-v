@@ -17,10 +17,9 @@ $not = new bdnoticia;
 $opc =  $_POST['cadastro'];
 
 if ($opc == 'cad') {
-    $flag = $fun -> GetFuncionarioLoginUnico( $_POST['nome']);
-    echo $flag;
+    $flag = $fun -> GetFuncionarioIdUnico( $_POST['cpf']);
     if ($flag == '') {
-        $fun -> SetUser($_POST['nome'],$_POST['senha']);
+        $fun -> SetFuncionario($_POST['cpf'],$_POST['nome'],$_POST['data'],$_POST['sexo'],$_POST['rg'],$_POST['celular'],$_POST['telefone'],1,$_POST['senha']);
         echo 'true';
     }
     else {
@@ -28,7 +27,7 @@ if ($opc == 'cad') {
     }
 }
 
-if ($opc == 'depo'){
+if ($opc == 'cli'){
     
     $depo -> SetDepo($_POST['nome'],$_POST['cidade'],$_POST['estado'],$_POST['curso'],$_POST['mensagem']);
     echo 'true';
