@@ -11,7 +11,12 @@
                 $('#entrar').click(function(){
                     
                     if (($('#login').val() == '') || ($('#senha').val() == ''))     {                        
-                        $('#senha').css('border','1px solid red');
+                        if ($('#login').val() == '') {
+                            $('#login').css('border','1px solid red');
+                            $('#login').attr('placeholder','Campo vazio');}}
+                        if ($('#senha').val() == '') {
+                            $('#senha').css('border','1px solid red');
+                            $('#senha').attr('placeholder','Campo vazio');}
                     }
                     else{
                         $('#form-login').attr('action','../controller/conectar.php');
@@ -31,7 +36,7 @@
             <label>Área Restrita :.</label>
             <input type="text" value="" name="login" id="login" placeholder="Login"/>
             <input type="password" value="" name="senha" id="senha" placeholder="Senha" />
-            <input type="submit" id="entrar" class="" value="Entrar"/>
+            <input type="button" id="entrar" class="" value="Entrar"/>
         </form>
     
     
