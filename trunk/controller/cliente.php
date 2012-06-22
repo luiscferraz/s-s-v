@@ -76,6 +76,41 @@ class cliente {
         
     }
     
+    private function MinhasVendas($id){
+        /**
+         * Tabela com a lista de funcionarios com opcao de excluir e editar
+         * 
+         * */
+         
+         $tabela = '<table id="tabela">
+                        <tr>
+                        	<th>CPF</th>
+                        	<th>Nome</th>
+                            <th>Editar</th>
+                            <th>Excluir</th>
+                        </tr>
+                        ';
+                        $a  = $this -> __bdfuncionario -> GetFuncionario();
+                        while ($fun = mysql_fetch_array($a)){ 
+                            $tabela = $tabela . '
+                            <tr>
+                            	<td>'.$fun['cpf'].'</td>
+                            	<td>'.htmlentities($fun['nome']).'</td>
+                            	<td><center><a href=""><img src="images/edit.png" alt="" /></a></center></td>
+                            	<td><center><a href=""><img src="images/excluir.png" alt="" /></a></center></td>
+                            </tr>';
+                            
+                        }
+                        
+                        $tabela = $tabela .'
+                    </table>';
+                    
+         
+         
+         return $tabela;
+        
+    }
+    
     private function ListaFuncionarios(){
         /**
          * Tabela com a lista de funcionarios com opcao de excluir e editar

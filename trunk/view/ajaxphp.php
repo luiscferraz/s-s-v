@@ -30,5 +30,8 @@ elseif ($identificador == 'cad-not'){
 elseif($identificador == 'not'){
     echo $noticia -> GetNoticias();
 }
+elseif ($identificador == 'min-ven'){
+    echo $noticia -> GetNoticias();
+}
 
 ?>
