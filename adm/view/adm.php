@@ -38,14 +38,14 @@ include_once 'importacao.php';
         <div id="corpo">
             <!-- Topo da pagina com logo da empresa e configurações -->
             <div id="topo">
-                <?php echo $topo -> GetTopo();?>
+                <?php echo $topo -> GetTopo($_SESSION['nome']);?>
             </div>
             <!-- Fim topo -->
             
             <!-- Centro da pagina com menu e conteiner com conteudo(o unico que ira mudar nas paginas) -->
             <div id="centro">
                 <div id="menu">
-                    <?php echo $menu -> GetMenu();?>
+                    <?php echo $menu -> GetMenu($_SESSION['nivel']);?>
                 </div>
                 <div id="conteudo"></div>
             </div>

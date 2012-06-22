@@ -46,8 +46,15 @@ td label {
     float:right;
 }
  /*estilo da pagina login adm*/
- 
 
+fieldset {
+    margin:10px 0px;
+    padding:10px;
+}
+input {
+    line-height:25px;
+    /height:25px;
+}
 #form-login {
     background-color: #A9DDF5;
     border:1px solid #CCC;

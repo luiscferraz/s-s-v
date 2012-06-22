@@ -18,31 +18,48 @@ class cliente {
     function __construct(){
         $this -> __bdfuncionario = new bdfuncionario;
         $this -> __cadastro ='
-                                <h2 class="title">Cadastrar Funcionario</h2>
+                                <h2 class="title">Cadastrar Cliente</h2>
                                 <form id="form-cadastro-funcionario">
-                                    <label>Nome Completo :</label>
-                                    <input type="text" value="" name="nome"/>
-                                    <label>Data de Nascimento</label>
-                                    <input type="text" value="" name="data"/>
-                                    <label>Sexo</label>
-                                    <select name="sexo">
-                                        <option value="masculino">M</option>
-                                        <option value="feminino">F</option>
-                                    </select>
-                                    <label>CPF:</label>
-                                    <input type="text" name="cpf" value=""/>
-                                    <label>RG:</label>
-                                    <input type="text" name="rg" value=""/>
-                                    <label>Telefone:</label>
-                                    <input type="text" value="" name="telefone"/>
-                                    <label>Celular:</label>
-                                    <input type="text" value="" name="celular"/>
-                                    <input type="button" value="Cadastrar"/>
+                                    <fieldset>
+                                        <legend>Dados Pessoais</legend>
+                                        <label>Nome Completo :</label>
+                                        <input type="text" value="" name="nome"/>
+                                        <label>CPFo :</label>
+                                        <input type="text" value="" name="cpf"/>
+                                        <label>RG :</label>
+                                        <input type="text" value="" name="rg"/>
+                                        <label>Rua :</label>
+                                        <input type="text" name="rua" value=""/>
+                                        <label>Bairro :</label>
+                                        <input type="text" name="bairro" value=""/>
+                                        <label>Cidade :</label>
+                                        <input type="text" value="" name="cidade"/>
+                                        <label>UF:</label>
+                                        <input type="text" value="" name="uf"/>
+                                        <label>CEP:</label>
+                                        <input type="text" value="" name="cep"/>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Dados do Veículo</legend>
+                                        <label>Veiculo:</label>
+                                        <input type="text" value="" name="veiculo"/>
+                                        <label>Placa :</label>
+                                        <input type="text" value="" name="placa"/>
+                                        <label>Modelo:</label>
+                                        <input type="text" value="" name="modelo"/>
+                                        <label>Fabricação :</label>
+                                        <input type="text" value="" name="fabricacao"/>
+                                        <label>Valor do Veículo :</label>
+                                        <input type="text" value="" name="valorveiculo"/>
+                                        <label>Foto Veículo:</label>
+                                        <input type="file" value="" name="foto"/>
+                                    </fieldset>
+                                        <input type="button" value="Cadastrar"/>
                                 </form>
                                 ';
                                 
         $this -> __buscar ='
-                                <h2 class="title">Buscar Funcionario</h2>
+                                <h2 class="title">Buscar Cliente</h2>
                                 <form id="form-buscar-funcionario">
                                     <label>Nome :</label>
                                     <input type="text" value="" name="nome"/>
@@ -76,7 +93,7 @@ class cliente {
         
     }
     
-    private function MinhasVendas($id){
+    public function MinhasVendas($id){
         /**
          * Tabela com a lista de funcionarios com opcao de excluir e editar
          * 
