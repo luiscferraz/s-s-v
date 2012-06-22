@@ -21,6 +21,15 @@ $(document).ready(function()
     
     //abrir conteudo cadastrar funcionario
     
+    
+    $('#min-ven').click(function(){
+        var clas = $(this).attr('id');
+        
+       $('#conteudo').load('ajaxphp.php','conteudo='+clas); 
+        
+    });
+    
+    
     $('.submenu li a').click(function(){
         var clas = $(this).attr('id');
         

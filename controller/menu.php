@@ -23,6 +23,11 @@ class menu {
                                         <li><a href="#" id="cli"> Clientes </a></li>
                                     </ul>
                                 </li>
+                                
+                                <li><a href="#" id="min-ven"><img src="images/not.png" alt="Vendas" title="Minhas Vendas" />Minhas Vendas</a>
+                                </li>
+                                
+                                
                                 <li><a href="#"><img src="images/not.png" alt="Info Notícia" title="Notícias" />Notícias</a>
                                     <ul class="submenu">
                                         <li> <a href="#" id="cad-not">Cadastrar Notícias</a> </li>
