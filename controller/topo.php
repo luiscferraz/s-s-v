@@ -11,7 +11,13 @@ class topo {
     
     function __construct(){
         $this -> __topo ='<img src="images/tjn.jpg" alt="TJN" title="TJN" /> 
-                            <a href="" id="configuracoes"><img src="images/config.png" alt="" /></a>';
+                            <ul id="configuracoes"><li ><img src="images/config.png" alt="" />
+                                                    <ul>
+                                                        
+                                                        <li><a href="../controller/sair.php">Sair</a></li>
+                                                    </ul>
+                                </li>
+                            </ul>';
     }
     
     public function  GetTopo(){
