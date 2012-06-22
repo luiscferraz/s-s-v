@@ -1,4 +1,6 @@
 <?php
+
+
 class banco {
 	private $db;
 	
@@ -13,7 +15,9 @@ class banco {
 	public function conecta(){
 		
 		$conn =  mysql_connect($this -> _db['server'],$this -> _db['user'], $this -> _db['password']) or die(mysql_error());
-		return $conn;
+		ini_set('default_charset','UTF-8'); // Para o charset das páginas e
+        mysql_set_charset('utf8'); // para a conexão com o MySQL
+        return $conn;
 		
 		
 		}
@@ -21,4 +25,5 @@ class banco {
 	
 	
 	}
+
 ?>

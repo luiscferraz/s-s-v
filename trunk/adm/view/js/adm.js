@@ -1,32 +1,42 @@
 $(document).ready(function()
 {
-    
     // submenu
     var uls = $('#ul-menu ul');  
     uls.hide();  
   
-    $('#ul-menu > li').live('click',function( e ){  
+    $('#ul-menu > li').click(function( e ){  
         e.stopPropagation();  
         uls.hide();  
         $( this ).find('ul').slideDown();  
     });  
-    $('#ul-menu ul').live('click',function( e ){  
+    $('#ul-menu ul').click(function( e ){  
         e.stopPropagation();  
     });  
-    $('body').live('click',function(){  
+    $('body').click(function(){  
         uls.slideUp();  
     });  
     
     //fim funcao submenu
     
     
-    //abrir conteudo 
+    //abrir conteudo cadastrar funcionario
     
-    $('.submenu li a').live('click',function(){
+    
+    $('#min-ven').click(function(){
         var clas = $(this).attr('id');
-        $('#conteudo').load('ajaxphp.php','conteudo='+clas); 
+        
+       $('#conteudo').load('ajaxphp.php','conteudo='+clas); 
         
     });
+    
+    
+    $('.submenu li a').click(function(){
+        var clas = $(this).attr('id');
+        
+       $('#conteudo').load('ajaxphp.php','conteudo='+clas); 
+        
+    });
+    
     
     //funcao pesquisa
     
@@ -52,11 +62,11 @@ $(document).ready(function()
     
     //funcao editar
     $('body').delegate('.editar','click',function(){
+        
        var campo = $(this).attr('id');
        var area = $('#tabela').attr('class');
        $("#conteudo").load("../controller/editar.php","area="+area+"&campo="+campo);
     });
-    
     
     //salvar edicao 
     
@@ -192,12 +202,24 @@ $(document).ready(function()
     
     
     
-    //ValidaÃ§Ãµes e efetuaÃ§Ãµes de cadastro
+    //Validações e efetuações de cadastro
     
     //Cadastro funcionario
     $('#bt-cad-fun').live('click',function(){
+        alert('l');
         var nome = $('input[name=nome]').val();
+        var cpf = $('input[name=cpf]').val();
+        var rg = $('input[name=rg]').val();
+        var data = $('input[name=data]').val();
+        var sexo = $('#sexo').val();
+        var telefone = $('input[name=telefone]').val();
+        var celular = $('input[name=celular]').val();
         var senha = $('input[name=senha]').val();
+        
+        
+        
+        
+        
         if (nome == '' || senha == ''){
             if (nome == ''){
                 $('input[name=nome]').css('border','1px solid red');
@@ -215,7 +237,7 @@ $(document).ready(function()
     			type: "POST",
     			url: "ajaxcadastro.php",
     			//data: "cadastro=cad&nome="+nome+"&senha="+senha,
-                data:{cadastro:"cad",nome:nome, senha:senha},
+                data:{cadastro:"cad",nome:nome, cpf:cpf,rg :rg,data:data,sexo:sexo,telefone:telefone,celular:celular,senha:senha},
     			success: function(conteudo){
     			 alert(conteudo);
     			     if (conteudo == 'true'){
@@ -228,7 +250,7 @@ $(document).ready(function()
                         $('.aviso').remove();
                         $('input[name=nome]').css('border','1px solid red');
                         $('input[name=nome]').css('background','#FF8F8F');
-                        $('form').prepend('<h2 class="aviso" >FuncionÃ¡rio Existente</h2>');
+                        $('form').prepend('<h2 class="aviso" >Funcionário Existente</h2>');
                      }    
 			}
   	     })
@@ -317,7 +339,7 @@ $(document).ready(function()
                         $('input[name=fonte]').val('');
                         $('textarea').val('');
                         $('.aviso').remove();
-                        $('form').prepend('<h2 class="aviso positivo" >NotÃ­cia Postada</h2>');
+                        $('form').prepend('<h2 class="aviso positivo" >Notícia Postada</h2>');
     			     }
 			}
   	     })
@@ -331,7 +353,6 @@ $(document).ready(function()
         $("table").load("../controller/pesquisa.php","area="+fun+"&campo="+campo+"&cont="+cont);
     }
    
-    
     
 });  
     

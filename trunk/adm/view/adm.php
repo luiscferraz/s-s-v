@@ -1,23 +1,11 @@
 <?php
 
-$local = $_SERVER['HTTP_HOST'];
-if ($local == 'localhost'){
-    $local = 'http://'.$local.'/acadetecinst/adm';
-    }
-else {
-    $local = 'http://'.$local.'/teste/adm';
-}
-
 @session_start();
 if (isset($_SESSION['flag'])){
-    if($_SESSION['flag'] == true){
-    } 
-    else {
-         header('Location:'.$local.'');
-    } 
-}
-else {
-    header('Location:'.$local.'');
+    if($_SESSION['flag'] != true){
+        header('Location : home.htm');
+    }
+    
 }
 // Importar as classes de construção do site
 include_once 'importacao.php';
@@ -26,15 +14,12 @@ include_once 'importacao.php';
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     
     <head>
-    	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
     	<meta name="author" content="Erick" />
-        <link href="<?php echo $local?>/view/css/layout.css" rel="stylesheet" type="text/css" />
-        <link href="<?php echo $local?>/view/css/jquery-ui-1.8.21.custom.css" rel="stylesheet" type="text/css" />
-        <script src="<?php echo $local?>/view/js/jquery-ui-1.8.18.custom.min.js"></script>
-        <script src="<?php echo $local?>/view/js/jquery-1.7.1.min.js"></script>
-        <script type = "text/javascript" src="<?php echo $local?>/view/js/jquery.base64.min.js"></script>
-        <script type="text/javascript" src="<?php echo $local?>/view/js/jscripts/tiny_mce/tiny_mce.js"></script>
-        <script src="<?php echo $local?>/view/js/adm.js"></script>
+        <link href="css/layout.css" rel="stylesheet" type="text/css" />
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <script src="js/adm.js"></script>
+        <script type="text/javascript" src="js/jscripts/tiny_mce/tiny_mce.js"></script>
         <!-- TinyMCE -->
         <script type="text/javascript">
         	tinyMCE.init({
@@ -49,6 +34,7 @@ include_once 'importacao.php';
     </head>
     
     <body>
+    
         <div id="corpo">
             <!-- Topo da pagina com logo da empresa e configurações -->
             <div id="topo">

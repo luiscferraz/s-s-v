@@ -16,7 +16,7 @@ $id = $_GET['campo'];
 if ( $area ==  'funcionario'){
         $fun -> DeleteFuncionario($id);
         $resultado = $fun -> GetFuncionario();
-        funcoes::tabela($resultado);
+        funcoes::tabela($resultado,0,1,'CPF');
 }
 
 if ( $area ==  'depoimento'){

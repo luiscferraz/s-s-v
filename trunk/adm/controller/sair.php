@@ -7,6 +7,6 @@
 
 @session_start();
 @session_destroy();
-header('Location: http://acadetec.com.br')
+header('Location: ../index.php')
 
 ?>
