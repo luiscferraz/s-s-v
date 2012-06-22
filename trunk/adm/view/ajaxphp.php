@@ -5,7 +5,7 @@
  * @copyright 2012
  * Informações para serem impressar via AJAX
  */
-
+session_start();
 include_once 'importacao.php';
 
 $identificador =  $_GET['conteudo'];
@@ -31,7 +31,7 @@ elseif($identificador == 'not'){
     echo $noticia -> GetNoticias();
 }
 elseif ($identificador == 'min-ven'){
-    echo $cliente -> MinhasVendas()
+    echo $cliente -> MinhasVendas($_SESSION['cpf']);
 }
 
 ?>
