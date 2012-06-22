@@ -10,16 +10,26 @@
             $(document).ready(function(){
                 $('#entrar').click(function(){
                     
+                    
+                    
                     if (($('#login').val() == '') || ($('#senha').val() == ''))     {                        
                         if ($('#login').val() == '') {
                             $('#login').css('border','1px solid red');
-                            $('#login').attr('placeholder','Campo vazio');}}
+                            $('#login').attr('placeholder','Campo vazio');}
                         if ($('#senha').val() == '') {
                             $('#senha').css('border','1px solid red');
                             $('#senha').attr('placeholder','Campo vazio');}
                     }
                     else{
-                        $('#form-login').attr('action','../controller/conectar.php');
+                         $.ajax({
+                			type: "POST",
+                			url: "../controller/conectar.php",
+                			//data: "edicao=fun&nome="+nome+"&senha="+senha+"&id="+id,
+                            data:{login:$('#login').val(), senha:$('#senha').val()},
+                			success: function(conteudo){
+     			                $(window.document.location).attr('href','adm.php');
+                                 }})
+                        
                     }
                     
                 });
