@@ -35,9 +35,6 @@ class menu {
                                         </ul>
                                     </li>
                                     
-                                    <li><a href="#" id="min-ven"><img src="images/not.png" alt="Vendas" title="Minhas Vendas" />Minhas Vendas</a>
-                                    </li>
-                                    
                                     
                                     <li><a href="#"><img src="images/not.png" alt="Info Notícia" title="Notícias" />Notícias</a>
                                         <ul class="submenu">
