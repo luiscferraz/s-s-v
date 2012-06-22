@@ -24,7 +24,7 @@ class bdfuncionario{
 	
 	public function SetFuncionario($cpf,$nome,$datanascimento,$sexo,$rg,$celular,$telefone,$nivel,$senha) {
 		// Campos obrigatorios(login,nome e senha) para poder cadastrar no banco
-			mysql_query('INSERT INTO  funcionario (cpf,nome,datanascimento,sexo,rg,celular,telefone,nivel,senha) VALUES ('.$senha.',"'.$login.'","'. $Nome.'",'. $DataAni.',"'. $Instrumento.'",'. $Telefone.','. $Celular.',"'. $Email.'", "'.$Foto.'","' .$Facebook.'","'. $Twitter.'","'. $Orkut.'","'. $MeusSites.'","'. $Categoria.'")', $this -> __conn) or die(mysql_error());
+			mysql_query('INSERT INTO  funcionario (cpf,nome,datanascimento,sexo,rg,celular,telefone,nivel,senha) VALUES ('.$cpf.',"'.$nome.'","'. $datanascimento.'","'. $sexo.'","'. $rg.'",'. $celular.','. $telefone.',"'. $nivel.'", "'.$senha.'")', $this -> __conn) or die(mysql_error());
 			return true;
 	}
 	
@@ -43,6 +43,7 @@ class bdfuncionario{
 			$result = mysql_query('SELECT * FROM funcionario WHERE cpf='.$id.'');
 			return mysql_fetch_array($result);
 		}
+        
 
 		
 	public function UpdateFuncionario($id,$senha,$login, $Nome,$DataAni, $Instrumento, $Telefone, $Celular, $Email,$Foto,$Facebook,$Twitter, $Orkut, $MeusSites, $Categoria) {

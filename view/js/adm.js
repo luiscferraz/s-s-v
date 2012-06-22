@@ -197,8 +197,20 @@ $(document).ready(function()
     
     //Cadastro funcionario
     $('#bt-cad-fun').live('click',function(){
+        alert('l');
         var nome = $('input[name=nome]').val();
+        var cpf = $('input[name=cpf]').val();
+        var rg = $('input[name=rg]').val();
+        var data = $('input[name=data]').val();
+        var sexo = $('#sexo').val();
+        var telefone = $('input[name=telefone]').val();
+        var celular = $('input[name=celular]').val();
         var senha = $('input[name=senha]').val();
+        
+        
+        
+        
+        
         if (nome == '' || senha == ''){
             if (nome == ''){
                 $('input[name=nome]').css('border','1px solid red');
@@ -216,7 +228,7 @@ $(document).ready(function()
     			type: "POST",
     			url: "ajaxcadastro.php",
     			//data: "cadastro=cad&nome="+nome+"&senha="+senha,
-                data:{cadastro:"cad",nome:nome, senha:senha},
+                data:{cadastro:"cad",nome:nome, cpf:cpf,rg :rg,data:data,sexo:sexo,telefone:telefone,celular:celular,senha:senha},
     			success: function(conteudo){
     			 alert(conteudo);
     			     if (conteudo == 'true'){

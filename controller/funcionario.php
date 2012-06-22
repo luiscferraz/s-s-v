@@ -25,7 +25,7 @@ class funcionario {
                                     <label>Data de Nascimento</label>
                                     <input type="text" value="" name="data"/>
                                     <label>Sexo</label>
-                                    <select name="sexo">
+                                    <select id="sexo" name="sexo">
                                         <option value="masculino">M</option>
                                         <option value="feminino">F</option>
                                     </select>
@@ -37,7 +37,9 @@ class funcionario {
                                     <input type="text" value="" name="telefone"/>
                                     <label>Celular:</label>
                                     <input type="text" value="" name="celular"/>
-                                    <input type="button" value="Cadastrar"/>
+                                    <label>Senha : </label>
+                                    <input type="text" value="" name="senha" />
+                                    <input type="button" id="bt-cad-fun" value="Cadastrar"/>
                                 </form>
                                 ';
                                 
@@ -69,15 +71,16 @@ class funcionario {
     
     public function GetEditarFuncionario($id){
         $result = $this -> __bdfuncionario -> GetFuncionarioIdUnico($id);
-        $cpf = $result[1];
-        $nome = $result[2];
-        $data = $result[3];
-        $sexo = $result[4];
-        $rg = $result[5];
-        $celular = $result[6];
-        $telefone = $result[7];
-        $senha = $result[9];
+        $cpf = $result[0];
+        $nome = $result[1];
+        $data = $result[2];
+        $sexo = $result[3];
+        $rg = $result[4];
+        $celular = $result[5];
+        $telefone = $result[6];
+        $senha = $result[8];
         $editar ='
+        
                                 <h2 class="title">Editar Funcionario</h2>
                                 <form id="form-edit" class="'.$id.'">                                    
                                     <form id="form-cadastro-funcionario">
