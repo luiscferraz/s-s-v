@@ -45,7 +45,7 @@ include_once 'importacao.php';
             <!-- Centro da pagina com menu e conteiner com conteudo(o unico que ira mudar nas paginas) -->
             <div id="centro">
                 <div id="menu">
-                    <?php echo $menu -> GetMenu($_SESSION['nivel']);?>
+                    <?php echo $menu -> GetMenu($_SESSION['nivel'],$_SESSION['area']);?>
                 </div>
                 <div id="conteudo"></div>
             </div>

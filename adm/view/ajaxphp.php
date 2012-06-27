@@ -33,5 +33,12 @@ elseif($identificador == 'not'){
 elseif ($identificador == 'min-ven'){
     echo $cliente -> MinhasVendas($_SESSION['cpf']);
 }
+elseif ($identificador == 'pag'){
+    echo $cliente -> Pagamentos(123);
+}
+
+elseif ($identificador == 'meusdados'){
+    echo $cliente -> Meusdados(123);
+}
 
 ?>
