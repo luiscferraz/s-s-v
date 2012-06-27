@@ -160,6 +160,7 @@ class funcionario {
                         $_SESSION['nome'] =  $funcionario['nome'];
                         $_SESSION['cpf'] = $funcionario['cpf'];
                         $_SESSION['nivel'] = $funcionario['nivel'];
+                        $_SESSION['area'] = 'adm';
                         $_SESSION['pass'] = true;
                         header('Location: ../view/adm.php');
                     }

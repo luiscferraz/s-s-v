@@ -93,6 +93,113 @@ class cliente {
         
     }
     
+    public function  Meusdados(){
+        /**
+         * Retorna Conteudo do edicao funcionario
+         * 
+         */
+         
+        $result = mysql_query('SELECT * FROM cliente WHERE id= 1');
+		$result = mysql_fetch_array($result);
+         $html = '<h2 class="title">Meu Dados</h2>
+                                <form id="form-cliente">
+                                    <fieldset>
+                                        <legend>Dados Pessoais</legend>
+                                        <label>Nome Completo :</label>
+                                        <input type="text" value="'.$result['nome'].'" disabled="disabled"  name="nome"/>
+                                        <label>CPF :</label>
+                                        <input type="text" value="'.$result['cpf'].'" disabled="disabled" name="cpf"/>
+                                        <label>RG :</label>
+                                        <input type="text" value="'.$result['rg'].'" disabled="disabled" name="rg"/>
+                                        <label>Rua :</label>
+                                        <input type="text" name="rua" value="'.$result['rua'].'"disabled="disabled" />
+                                        <label>Bairro :</label>
+                                        <input type="text" name="bairro" value="'.$result['bairro'].'"disabled="disabled" />
+                                        <label>Cidade :</label>
+                                        <input type="text" value="'.$result['cidade'].'" name="cidade"disabled="disabled" />
+                                        <label>UF:</label>
+                                        <input type="text" value="'.$result['uf'].'" name="uf"disabled="disabled" />
+                                        <label>CEP:</label>
+                                        <input type="text" value="'.$result['cep'].'" name="cep"disabled="disabled" />
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>Dados do Veículo</legend>
+                                        <label>Veiculo:</label>
+                                        <input type="text" value="'.$result['veiculo'].'" name="veiculo"disabled="disabled" />
+                                        <label>Placa :</label>
+                                        <input type="text" value="'.$result['placa'].'" name="placa"disabled="disabled" />
+                                        <label>Modelo:</label>
+                                        <input type="text" value="'.$result['modelo'].'" name="modelo"disabled="disabled" />
+                                        <label>Fabricação :</label>
+                                        <input type="text" value="'.$result['fabricacao'].'" name="fabricacao"disabled="disabled" />
+                                        <label>Valor do Veículo :</label>
+                                        <input type="text" value="'.$result['valordoveiculo'].' R$" name="valorveiculo"disabled="disabled" />
+                                        <label>Foto Veículo:</label>
+                                        <img src="../'.$result['foto'].'" />
+                                    </fieldset>
+                                        
+                                </form>';
+         
+         
+         
+         
+        return $html; 
+        
+    }
+    
+    public function Pagamentos($id){
+        /**
+         * Tabela com a lista de funcionarios com opcao de excluir e editar
+         * 
+         * */
+         
+         $tabela = '<table id="tabela">
+                        <tr>
+                        	<th>Valor</th>
+                        	<th>Mês</th>
+                            <th>Pago</th>
+                            
+                        </tr>
+                            <tr>
+                            	<td>500,00</td>
+                            	<td>2 de fevereiro</td>
+                            	<td>Pago</td>
+                            </tr>
+                             <tr>
+                            	<td>500,00</td>
+                            	<td>2 de março</td>
+                            	<td>Pago</td>
+                            </tr>
+                             <tr>
+                            	<td>500,00</td>
+                            	<td>2 de abril</td>
+                            	<td>Pago</td>
+                            </tr>
+                             <tr>
+                            	<td>500,00</td>
+                            	<td>2 de maio</td>
+                            	<td>Pago</td>
+                            </tr>
+                             <tr>
+                            	<td>500,00</td>
+                            	<td>2 de junho</td>
+                            	<td>Pago</td>
+                            </tr>
+                             <tr>
+                            	<td>500,00</td>
+                            	<td>2 de julho</td>
+                            	<td>Aberto</td>
+                            </tr>
+                    </table>';
+                    
+         
+         
+         return $tabela;
+        
+    }
+    
+    
+    
     public function MinhasVendas($id){
         /**
          * Tabela com a lista de funcionarios com opcao de excluir e editar

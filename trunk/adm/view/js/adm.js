@@ -29,6 +29,22 @@ $(document).ready(function()
         
     });
     
+    $('#pag').click(function(){
+        var clas = $(this).attr('id');
+        
+       $('#conteudo').load('ajaxphp.php','conteudo='+clas); 
+        
+    });
+    
+    $('#form-cliente input').css('border','1px solid red');
+    
+    $('#meusdados').click(function(){
+        var clas = $(this).attr('id');
+        
+       $('#conteudo').load('ajaxphp.php','conteudo='+clas); 
+        
+    });
+    
     
     $('.submenu li a').click(function(){
         var clas = $(this).attr('id');
