@@ -34,24 +34,24 @@ class cliente {
                                         <input type="text" name="bairro" value=""/>
                                         <label>Cidade :</label>
                                         <input type="text" value="" name="cidade"/>
-                                        <label>UF:</label>
+                                        <label>UF :</label>
                                         <input type="text" value="" name="uf"/>
-                                        <label>CEP:</label>
+                                        <label>CEP :</label>
                                         <input type="text" value="" name="cep"/>
                                     </fieldset>
                                     <fieldset>
                                         <legend>Dados do Veículo</legend>
-                                        <label>Veiculo:</label>
+                                        <label>Veículo :</label>
                                         <input type="text" value="" name="veiculo"/>
                                         <label>Placa :</label>
                                         <input type="text" value="" name="placa"/>
-                                        <label>Modelo:</label>
+                                        <label>Modelo :</label>
                                         <input type="text" value="" name="modelo"/>
                                         <label>Fabricação :</label>
                                         <input type="text" value="" name="fabricacao"/>
                                         <label>Valor do Veículo :</label>
                                         <input type="text" value="" name="valorveiculo"/>
-                                        <label>Foto Veículo:</label>
+                                        <label>Foto Veículo :</label>
                                         <input type="file" value="" name="foto"/>
                                     </fieldset>
                                         <input type="button" id="bt-cad-cli" value="Cadastrar"/>

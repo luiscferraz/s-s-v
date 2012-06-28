@@ -20,26 +20,26 @@ class cliente {
         $this -> __cadastro ='
                                 <h2 class="title">Cadastrar Noticia</h2>
                                 <form id="form-cadastro-noticia">
-                                    <label>Titulo :</label>
+                                    <label>Título :</label>
                                     <input type="text" value="" name="titulo"/>
-                                    <label>Conteudo :</label>
+                                    <label>Conteúdo :</label>
                                     <input type="text" value="" name="conteudo"/>
                                     <label>Fonte :</label>
                                     <input type="text" value="" name="fonte"/>
                                     <label>Postado por :</label>
                                     <input type="text" value="" name="postado"/>
-                                    <label>Data</label>
+                                    <label>Data :</label>
                                     <input type="text" value="" name="data"/>
                                     <input type="button" value="Cadastrar"/>
                                 </form>
                                 ';
                                 
         $this -> __buscar ='
-                                <h2 class="title">Buscar Noticia</h2>
+                                <h2 class="title">Buscar Notícia</h2>
                                 <form id="form-buscar-noticia">
-                                    <label>Titulo :</label>
+                                    <label>Título :</label>
                                     <input type="text" value="" name="titulo"/>
-                                    <label>Data:</label>
+                                    <label>Data :</label>
                                     <input type="text" name="data" value=""/>
                                     <input type="button" value="Buscar"/>
                                 </form>

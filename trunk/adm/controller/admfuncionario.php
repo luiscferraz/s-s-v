@@ -14,7 +14,7 @@ class funcionario {
     
     function __construct(){
         $this -> __cadastro ='<ul id="ul-menu">
-                                <li><a href="#"><img src="images/administrador.png" alt="Info Funcionarios" title="Funcionários" />Funcionários</a>
+                                <li><a href="#"><img src="images/administrador.png" alt="Info Funcionários" title="Funcionários" />Funcionários</a>
                                     <ul class="submenu">
                                         <li> <a href="#" id="cad-fun">Cadastrar Funcionário</a> </li>
                                         <li><a href="#" id="edt-fun"> Editar Funcionário</a> </li>

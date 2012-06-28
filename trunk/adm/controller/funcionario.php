@@ -18,24 +18,24 @@ class funcionario {
     function __construct(){
         $this -> __bdfuncionario = new bdfuncionario;
         $this -> __cadastro ='
-                                <h2 class="title">Cadastrar Funcionario</h2>
+                                <h2 class="title">'.htmlentities('Cadastro Funcionário').'</h2>
                                 <form id="form-cadastro-funcionario">
                                     <label>Nome Completo :</label>
                                     <input type="text" value="" name="nome"/>
-                                    <label>Data de Nascimento</label>
+                                    <label>Data de Nascimento :</label>
                                     <input type="text" value="" name="data"/>
-                                    <label>Sexo</label>
+                                    <label>Sexo :</label>
                                     <select id="sexo" name="sexo">
                                         <option value="masculino">M</option>
                                         <option value="feminino">F</option>
                                     </select>
-                                    <label>CPF:</label>
+                                    <label>CPF :</label>
                                     <input type="text" name="cpf" value=""/>
-                                    <label>RG:</label>
+                                    <label>RG :</label>
                                     <input type="text" name="rg" value=""/>
-                                    <label>Telefone:</label>
+                                    <label>Telefone :</label>
                                     <input type="text" value="" name="telefone"/>
-                                    <label>Celular:</label>
+                                    <label>Celular :</label>
                                     <input type="text" value="" name="celular"/>
                                     <label>Senha : </label>
                                     <input type="text" value="" name="senha" />
