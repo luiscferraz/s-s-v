@@ -67,7 +67,7 @@ class cliente {
                                     <input type="text" name="cpf" value=""/>
                                     <input type="button" value="Buscar"/>
                                 </form>
-                                '.$this -> ListaFuncionarios().'
+                                '.$this -> ListaCliente().'
                                 
                                 
                                 ';
@@ -210,18 +210,17 @@ class cliente {
                         <tr>
                         	<th>CPF</th>
                         	<th>Nome</th>
-                            <th>Editar</th>
-                            <th>Excluir</th>
+                            
                         </tr>
                         ';
-                        $a  = $this -> __bdfuncionario -> GetFuncionario();
+                        $a = mysql_query('SELECT * FROM cliente');
+                        
                         while ($fun = mysql_fetch_array($a)){ 
                             $tabela = $tabela . '
                             <tr>
                             	<td>'.$fun['cpf'].'</td>
                             	<td>'.htmlentities($fun['nome']).'</td>
-                            	<td><center><a href=""><img src="images/edit.png" alt="" /></a></center></td>
-                            	<td><center><a href=""><img src="images/excluir.png" alt="" /></a></center></td>
+                            	
                             </tr>';
                             
                         }
@@ -235,13 +234,13 @@ class cliente {
         
     }
     
-    private function ListaFuncionarios(){
+    private function ListaCliente(){
         /**
          * Tabela com a lista de funcionarios com opcao de excluir e editar
          * 
          * */
          
-         $tabela = '<table id="tabela">
+           $tabela = '<table id="tabela">
                         <tr>
                         	<th>CPF</th>
                         	<th>Nome</th>
@@ -249,7 +248,8 @@ class cliente {
                             <th>Excluir</th>
                         </tr>
                         ';
-                        $a  = $this -> __bdfuncionario -> GetFuncionario();
+                        $a = mysql_query('SELECT * FROM cliente');
+                        
                         while ($fun = mysql_fetch_array($a)){ 
                             $tabela = $tabela . '
                             <tr>
