@@ -38,23 +38,23 @@ class noticia {
                                         
                                         <tr>
                                             
-                                            <td><label>Titulo:</label></td>
+                                            <td><label>Título :</label></td>
                                             <td><input type="text" value="" name="titulo"/></td>
                                         </tr>
                                         <tr>
-                                            <td><label>Conteudo:</label></td>
+                                            <td><label>Conteúdo :</label></td>
                                             <td><textarea name="conteudo" rows="20" cols="95"></textarea></td>
                                         </tr>
                                         <tr>
-                                            <td><label>Fonte:</label></td>
+                                            <td><label>Fonte :</label></td>
                                             <td><input type="text" value="" name="fonte"/></td>
                                         </tr>
                                         <tr>
-                                            <td><label>Postado por:</label></td>
+                                            <td><label>Postado por :</label></td>
                                             <td><input type="text" value="" name="postado" /></td>
                                         </tr>
                                         <tr>
-                                            <td><label>Data:</label> </td>
+                                            <td><label>Data :</label> </td>
                                             <td><input type="text" value="'.date('d').'/'.date('m').'/'.date('Y').'" id="data" name="data"/></td>
                                             
                                         </tr>
@@ -67,11 +67,11 @@ class noticia {
                                 ';
                                 
         $this -> __buscar ='
-                                <h2 class="title">Buscar noticia</h2>
+                                <h2 class="title">Buscar Notícia</h2>
                                 <form id="form-buscar" class="not">
-                                    <label>Titulo :</label>
+                                    <label>Título :</label>
                                     <input type="text" value="" id="titulo" name="nome"/>
-                                    <label>Data:</label>
+                                    <label>Data :</label>
                                     <input type="text" name="data" id="data" value="" placeholder="dd-mm-yyyy" />
                                     <input type="button" value="Buscar"/>
                                 </form>
